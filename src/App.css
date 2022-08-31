@@ -2,6 +2,124 @@
   text-align: center;
 }
 
+
+.test {
+  width: 100wh;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 100s ease infinite;
+  }
+
+.paused {
+  -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+  animation-play-state: paused;
+}
+
+.clicked {
+  background: linear-gradient(45deg, #EE7752, #E73C7E,  #ff7b00, #2c1805,);
+  background-size: 400% 400%;
+  -webkit-animation: Clicked 5s ease infinite;
+  -moz-animation: Clicked 5s ease infinite;
+  animation: Clicked 5s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 0%
+  }
+  50% {
+    background-position: 100% 100%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-webkit-keyframes Clicked {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 100% 0%
+  }
+}
+
+@-moz-keyframes Clicked {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 100% 0%
+  }
+}
+
+@keyframes Clicked {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 100% 0%
+  }
+}
+
+h1,
+h6 {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  left: 0;
+  }
+
+button {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 48%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
