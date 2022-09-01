@@ -1,17 +1,26 @@
+@font-face {
+  font-family: 'Jost';
+  src: url(font/jost.ttf)
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
 .App {
   text-align: center;
+  font-family: Jost;
 }
 
 
 .test {
+  font-family: Jost;
   width: 100wh;
   height: 100vh;
   color: #fff;
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 10s ease infinite;
-  -moz-animation: Gradient 10s ease infinite;
-  animation: Gradient 100s ease infinite;
+  background: linear-gradient(180deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 200% 200%;
+  /* -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite; */
+  animation: Gradient 15s ease infinite;
   }
 
 .paused {
@@ -19,15 +28,32 @@
   animation-play-state: paused;
 }
 
-.clicked {
-  background: linear-gradient(45deg, #EE7752, #E73C7E,  #ff7b00, #2c1805,);
-  background-size: 400% 400%;
-  -webkit-animation: Clicked 5s ease infinite;
-  -moz-animation: Clicked 5s ease infinite;
-  animation: Clicked 5s ease infinite;
+@keyframes Gradient {
+  0% {
+    background-position: 100% 100%
+  }
+  50% {
+    background-position: 0% 0%
+  }
+  100% {
+    background-position: 100% 100%
+  }
 }
 
-@-webkit-keyframes Gradient {
+
+@keyframes Clicked {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+} */
+
+/* @-webkit-keyframes Gradient {
   0% {
     background-position: 0% 0%
   }
@@ -49,21 +75,10 @@
   100% {
     background-position: 0% 50%
   }
-}
+} */
 
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
 
-@-webkit-keyframes Clicked {
+/* @-webkit-keyframes Clicked {
   0% {
     background-position: 0% 50%
   }
@@ -86,18 +101,7 @@
     background-position: 100% 0%
   }
 }
-
-@keyframes Clicked {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 100% 0%
-  }
-}
+*/
 
 h1,
 h6 {
