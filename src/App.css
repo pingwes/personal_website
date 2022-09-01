@@ -1,15 +1,12 @@
 @font-face {
   font-family: 'Jost';
   src: url(font/jost.ttf)
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
 }
 
 .App {
   text-align: center;
   font-family: Jost;
 }
-
 
 .test {
   font-family: Jost;
@@ -18,13 +15,11 @@
   color: #fff;
   background: linear-gradient(180deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 200% 200%;
-  /* -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite; */
   animation: Gradient 15s ease infinite;
   }
 
 .paused {
-  -webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+  -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
 
@@ -33,7 +28,7 @@
     background-position: 100% 100%
   }
   50% {
-    background-position: 0% 0%
+    background-position: 0% 0%;
   }
   100% {
     background-position: 100% 100%
@@ -51,57 +46,7 @@
   100% {
     background-position: 0% 50%
   }
-} */
-
-/* @-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 0%
-  }
-  50% {
-    background-position: 100% 100%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-} */
-
-
-/* @-webkit-keyframes Clicked {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 100% 0%
-  }
-}
-
-@-moz-keyframes Clicked {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 100% 0%
-  }
-}
-*/
+} 
 
 h1,
 h6 {
