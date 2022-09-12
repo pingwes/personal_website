@@ -3,6 +3,10 @@
   src: url(font/jost.ttf)
 }
 
+body {
+  font-family: Jost;
+}
+
 .App {
   text-align: center;
   font-family: Jost;
@@ -48,25 +52,12 @@
   }
 } 
 
-h1,
-h6 {
-  font-family: 'Open Sans';
-  font-weight: 300;
-  text-align: center;
-  position: absolute;
-  top: 45%;
-  right: 0;
-  left: 0;
-  }
 
 button {
-  font-family: 'Open Sans';
+  font-family: Jost;
   font-weight: 300;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: 48%;
+  text-align: right;
+
 }
 
 .App-logo {
