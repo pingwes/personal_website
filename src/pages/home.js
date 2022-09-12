@@ -9,32 +9,16 @@ const Home = ({handleChange}) => {
 
   return (
     <>
-      <button
-          onClick={() => setShowMessage(true)}
-          size="lg">
-          Show Message
-        </button>
-      <CSSTransition
-        in={showMessage}
-        timeout={300}
-        classNames="alert"
-        unmountOnExit
-        onEnter={() => setShowButton(false)}
-        onExited={() => setShowButton(true)}
-      >      
-      <div className="mx-5 py-20 text-right text-4xl">
-        <button
-          className="my-5" 
+      <div className="mx-5">
+        <button 
           value={"about"}  
           onClick={e => handleChange(e) } >About</button>
         
-          <div className="my-5">Blog</div>
-          <div className="my-5">Projects</div>
-          <div className="my-5">Artwork</div>
-          <div className="my-5">LinkedIn</div>
+          <div>Blog</div>
+          <div>Projects</div>
+          <div>Artwork</div>
+          <div>LinkedIn</div>
         </div>
-        
-      </CSSTransition>
     </>
     );
 };

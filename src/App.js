@@ -7,6 +7,7 @@ import Home from './pages/home'
 import About from './pages/about'
 import Projects from './pages/projects'
 import Artwork from './pages/artwork'
+import ArrowPad from './components/arrowPad'
 
 function App() {
   const [style, setStyle] = useState({animationClass: 'test'})
@@ -17,23 +18,8 @@ function App() {
     setState(e.target.value);
   }
 
-  const changeState = () => {
-    if(state.animationClass === 'test'){
-      setState({
-        animationClass: 'test clicked'
-      });
-    }else{
-      setState({
-        animationClass: 'test'
-      });
-    }
-  }
-
-
   const renderPage = () => {
-    console.log("state: " + state)
     switch(state){
-      
       case "home":
         return (
           <Home
@@ -63,12 +49,18 @@ function App() {
 
   return (
     <>
-      <div className={style.animationClass}>
-      {/* <button 
-        value={"about"}  
-          onClick={e => handleChange(e) } >About</button> */}
-        {renderPage()}
-        
+      <div className="bg-[#efa141] h-[40rem] my-2 mx-2 pt-2 rounded-3xl shadow-2xl">
+        <div className="bg-black h-1/2 mx-5 mt-5 py-5 rounded-xl">
+          <div className="bg-white h-full mx-5 py-5">
+            {renderPage()}
+          </div>
+        </div>
+        <div className="grid grid-cols-8 gap-2 mx-5 mt-16 ml-12">
+          <div className="col-span-4">
+            <ArrowPad />
+          </div>
+          <div className="col-span-4">test2</div>
+        </div>
       </div>
     </>
   );
