@@ -68,6 +68,7 @@ function App() {
         value={"about"}  
           onClick={e => handleChange(e) } >About</button> */}
         {renderPage()}
+        
       </div>
     </>
   );
