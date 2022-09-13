@@ -21,16 +21,20 @@ function App() {
   }
 
   const incrementSelector = (e) => {
-    setSelector(selector + 1);
+    if (selector < 6) setSelector(selector + 1);
   }
   
   const decrementSelector = () => {
-    setSelector(selector - 1);
+    if (selector > 1) setSelector(selector - 1);
   }
 
   const selectState = () => {
     setState(selector)
   }
+
+  const openInNewTab = (url) => {
+    window.open(url);
+  };
 
   const renderPage = () => {
     switch(pages[state]){
@@ -47,6 +51,14 @@ function App() {
             handleChange={handleChange}
           />
         )
+      case "blog":
+        openInNewTab('http://www.compunomicz.blogspot.com')
+        return (
+          <Home
+            handleChange={handleChange}
+            current={selector}
+          />
+        )
       case "projects":
         return (
           <Projects
@@ -57,6 +69,14 @@ function App() {
         return (
           <Artwork
             handleChange={handleChange}
+          />
+        )
+      case "onlyfans":
+        openInNewTab('https://www.wikihow.com/Find-God')
+        return (
+          <Home
+            handleChange={handleChange}
+            current={selector}
           />
         )
     }

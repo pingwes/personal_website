@@ -10,7 +10,7 @@ const About = (handleChange) => {
       </div>
       <div className="text-sm">
         I'm a software engineer living in San Francisco, California. I studied computer science at Michigan State University, and I currently work at getpesto.com.
-        I'm deeply interested in a range of fields.
+        I'm deeply interested in a technology.
         In my free time, I like to play guitar and piano, paint, and enjoy nature.
         
       </div>
