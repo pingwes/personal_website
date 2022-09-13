@@ -9,7 +9,7 @@ const Home = ({handleChange, current}) => {
 
   return (
     <>
-      <div className="mx-5 text-2xl">
+      <div className="mx-5 w-100 text-2xl">
         <p>
           {current == 1 && <ArrowSelect/>}
           <button 
