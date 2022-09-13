@@ -103,7 +103,7 @@ function App() {
             <div className="text-purple-400 text-xl inline">の魂</div>
           </div>
         </div>
-        <div className="grid grid-cols-8 gap-2 mx-5 mt-16 ml-12">
+        <div className="grid grid-cols-8 gap-2 mx-5 mt-16 ml-10">
           <div className="col-span-4">
             <ArrowPad 
               down={incrementSelector}
