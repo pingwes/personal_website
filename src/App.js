@@ -28,6 +28,9 @@ function App() {
     setSelector(selector - 1);
   }
 
+  const selectState = () => {
+    setState(selector)
+  }
 
   const renderPage = () => {
     switch(pages[state]){
@@ -77,7 +80,8 @@ function App() {
             <button className="rounded-3xl w-12 h-12 bg-red-500 text-red-600 text-3xl ml-5 mt-8 text-center"
               value={0}  
               onClick={e => handleChange(e) } >B</button>
-            <button className="rounded-3xl w-12 h-12 bg-green-500 text-green-600 text-3xl ml-5 text-center">A</button>
+            <button className="rounded-3xl w-12 h-12 bg-green-500 text-green-600 text-3xl ml-5 text-center"
+              onClick={selectState}>A</button>
           </div>
         </div>
       </div>
