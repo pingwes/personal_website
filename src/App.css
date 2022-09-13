@@ -2,22 +2,32 @@
   font-family: 'Jost';
   src: url(font/jost.ttf)
 }
+
 @font-face {
   font-family: 'Terminal';
   src: url(font/terminal.ttf)
 }
 
+@font-face {
+  font-family: 'Hallelujah';
+  src: url(font/GloriaHallelujah-Regular.ttf)
+}
+
 body {
-  font-family: Jost;
+  font-family: Terminal;
 }
 
 .terminal {
   font-family: Terminal;
 }
 
+.hallelujah {
+  font-family: Hallelujah;
+}
+
 .App {
   text-align: center;
-  font-family: Jost;
+  font-family: Terminal;
 }
 
 p {
@@ -25,7 +35,6 @@ p {
 }
 
 .test {
-  font-family: Jost;
   width: 100wh;
   height: 100vh;
   color: #fff;
