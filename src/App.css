@@ -25,6 +25,10 @@ body {
   font-family: Hallelujah;
 }
 
+.jost {
+  font-family: Jost;
+}
+
 .App {
   text-align: center;
   font-family: Terminal;

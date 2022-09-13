@@ -90,7 +90,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-[#efa141] h-[40rem] my-2 mx-auto pt-2 rounded-3xl shadow-2xl max-w-md">
+      <div className="relative bg-orange-400 h-[40rem] my-2 mx-auto pt-2 rounded-3xl shadow-2xl max-w-md">
         <div className="bg-black h-1/2 mx-5 mt-5 py-5 pb-10 rounded-xl">
           <div className="bg-slate-800 text-green-500 h-full mx-5 py-5">
             {renderPage()}
@@ -107,17 +107,19 @@ function App() {
               up={decrementSelector} />
           </div>
           <div className="col-span-4 grid grid-cols-2">
-            <button className="rounded-3xl w-12 h-12 bg-red-500 text-red-600 text-3xl ml-5 mt-8 text-center"
+            <button className="rounded-3xl w-12 h-12 bg-red-500 text-red-600 text-3xl ml-5 mt-8 text-center border border-grey-500"
               value={0}  
               onClick={e => handleChange(e) } >B</button>
-            <button className="rounded-3xl w-12 h-12 bg-green-500 text-green-600 text-3xl ml-5 text-center border border-blue-400 "
+            <button className="rounded-3xl w-12 h-12 bg-green-500 text-green-600 text-3xl ml-5 text-center border border-grey-500"
               onClick={selectState}>A</button>
           </div>
         </div>
-        {/* <div className="h-50"> 3</div>
-        <div className="hallelujah text-center text-xl">
-          Wesley Louis Berry III 
-        </div> */}
+
+        <div className="absolute bottom-4 inset-x-0 text-center text-xl">
+          <div className='jost text-sm'>weslouis.eth</div>
+          <div className='hallelujah '>Wesley Louis Berry III </div>
+          
+        </div>
         
       </div>
     </>
