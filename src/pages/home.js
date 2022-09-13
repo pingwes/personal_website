@@ -15,7 +15,7 @@ const Home = ({handleChange, current}) => {
           <button 
             className="terminal text-2xl"
             value={1}  
-            onClick={e => handleChange(e) } >About</button>
+            onClick={e => handleChange(e) } >About me</button>
           <br/>
           {current == 2 && <ArrowSelect/>}
           <button 
