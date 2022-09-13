@@ -107,7 +107,9 @@ function App() {
           <div className="col-span-4">
             <ArrowPad 
               down={incrementSelector}
-              up={decrementSelector} />
+              up={decrementSelector}
+              left={handleChange}
+              right={selectState} />
           </div>
           <div className="col-span-4 grid grid-cols-2">
             <button className="rounded-3xl w-12 h-12 bg-red-500 text-red-600 text-3xl ml-5 mt-8 text-center border border-grey-500"
