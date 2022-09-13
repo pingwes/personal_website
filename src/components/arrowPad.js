@@ -1,5 +1,5 @@
 
-const ArrowPad = () => {
+const ArrowPad = ({down, up}) => {
 
   
   return (
@@ -7,9 +7,11 @@ const ArrowPad = () => {
       <div className="w-8 h-8"></div>
       <button className="w-8 h-8 bg-neutral-900 border-neutral-900"></button>
       <div className="w-8 h-8"></div>
-      <button className="w-8 h-8 bg-neutral-900 border-neutral-900"></button>
+      <button className="w-8 h-8 bg-neutral-900 border-neutral-900"
+        onClick={up}></button>
       <div className="w-8 h-8 bg-neutral-900 border-neutral-900"></div>
-      <button className="w-8 h-8 bg-neutral-900 border-neutral-900"></button>
+      <button className="w-8 h-8 bg-neutral-900 border-neutral-900"
+        onClick={down}></button>
       <div className="w-8 h-8"></div>
       <button className="w-8 h-8 bg-neutral-900 border-neutral-900"></button>
       <div className="w-8 h-8"></div>

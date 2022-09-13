@@ -10,20 +10,32 @@ import Artwork from './pages/artwork'
 import ArrowPad from './components/arrowPad'
 
 function App() {
+  const pages = ["home", "about", "blog", "projects", "artwork", "onlyfans"]
   const [style, setStyle] = useState({animationClass: 'test'})
-  const [state, setState] = useState("home")
+  const [state, setState] = useState(0)
+  const [selector, setSelector] = useState(1)
 
   // Handle fields change
   const handleChange = (e) => {
     setState(e.target.value);
   }
 
+  const incrementSelector = (e) => {
+    setSelector(selector + 1);
+  }
+  
+  const decrementSelector = () => {
+    setSelector(selector - 1);
+  }
+
+
   const renderPage = () => {
-    switch(state){
+    switch(pages[state]){
       case "home":
         return (
           <Home
             handleChange={handleChange}
+            current={selector}
           />
         )
       case "about":
@@ -49,7 +61,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-[#efa141] h-[40rem] my-2 mx-2 pt-2 rounded-3xl shadow-2xl">
+      <div className="bg-[#efa141] h-[40rem] my-2 mx-auto pt-2 rounded-3xl shadow-2xl max-w-md">
         <div className="bg-black h-1/2 mx-5 mt-5 py-5 rounded-xl">
           <div className="bg-white h-full mx-5 py-5">
             {renderPage()}
@@ -57,9 +69,16 @@ function App() {
         </div>
         <div className="grid grid-cols-8 gap-2 mx-5 mt-16 ml-12">
           <div className="col-span-4">
-            <ArrowPad />
+            <ArrowPad 
+              down={incrementSelector}
+              up={decrementSelector} />
           </div>
-          <div className="col-span-4">test2</div>
+          <div className="col-span-4 grid grid-cols-2">
+            <button className="rounded-3xl w-12 h-12 bg-red-500 text-red-600 text-3xl ml-5 mt-8 text-center"
+              value={0}  
+              onClick={e => handleChange(e) } >B</button>
+            <button className="rounded-3xl w-12 h-12 bg-green-500 text-green-600 text-3xl ml-5 text-center">A</button>
+          </div>
         </div>
       </div>
     </>

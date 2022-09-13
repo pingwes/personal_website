@@ -2,14 +2,26 @@
   font-family: 'Jost';
   src: url(font/jost.ttf)
 }
+@font-face {
+  font-family: 'Terminal';
+  src: url(font/terminal.ttf)
+}
 
 body {
   font-family: Jost;
 }
 
+.terminal {
+  font-family: Terminal;
+}
+
 .App {
   text-align: center;
   font-family: Jost;
+}
+
+p {
+  font-family: Terminal;
 }
 
 .test {
@@ -108,4 +120,22 @@ button {
 .my-node-exit-active {
   opacity: 0;
   transition: opacity 200ms;
+}
+
+
+.blink {
+  animation: blink-animation .1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  display:inline;
+
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
