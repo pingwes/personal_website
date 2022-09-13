@@ -22,10 +22,12 @@ function App() {
 
   const incrementSelector = (e) => {
     if (selector < 6) setSelector(selector + 1);
+    setSelector(1)
   }
   
   const decrementSelector = () => {
     if (selector > 1) setSelector(selector - 1);
+    setSelector(6)
   }
 
   const selectState = () => {
