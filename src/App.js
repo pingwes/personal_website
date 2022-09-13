@@ -21,7 +21,7 @@ function App() {
   }
 
   const incrementSelector = (e) => {
-    if (selector < 6) setSelector(selector + 1);
+    if (selector < 5) setSelector(selector + 1);
     else
       setSelector(1)
   }
@@ -29,7 +29,7 @@ function App() {
   const decrementSelector = () => {
     if (selector > 1) setSelector(selector - 1);
     else
-      setSelector(6)
+      setSelector(5)
   }
 
   const selectState = () => {
