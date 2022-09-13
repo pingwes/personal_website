@@ -92,7 +92,7 @@ function App() {
     <>
       <div className="bg-[#efa141] h-[40rem] my-2 mx-auto pt-2 rounded-3xl shadow-2xl max-w-md">
         <div className="bg-black h-1/2 mx-5 mt-5 py-5 pb-10 rounded-xl">
-          <div className="bg-slate-800 text-white h-full mx-5 py-5">
+          <div className="bg-slate-800 text-green-500 h-full mx-5 py-5">
             {renderPage()}
           </div>
           <div className="text-center mt-1">
