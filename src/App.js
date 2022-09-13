@@ -51,8 +51,9 @@ function App() {
             handleChange={handleChange}
           />
         )
-      case "blog":
+      case "blog": 
         openInNewTab('http://www.compunomicz.blogspot.com')
+        setState(0)
         return (
           <Home
             handleChange={handleChange}
@@ -73,6 +74,7 @@ function App() {
         )
       case "onlyfans":
         openInNewTab('https://www.wikihow.com/Find-God')
+        setState(0)
         return (
           <Home
             handleChange={handleChange}
