@@ -8,8 +8,16 @@ import About from './pages/about'
 import Projects from './pages/projects'
 import Artwork from './pages/artwork'
 import ArrowPad from './components/arrowPad'
+import ReactGA from 'react-ga';
+import useAnalyticsEventTracker from './useAnalyticsEventTracker';
+
+const MEASUREMENT_ID = "G-2HQHR1VQEL"; // OUR_TRACKING_ID
+
+ReactGA.initialize(MEASUREMENT_ID);
 
 function App() {
+  const gaEventTracker = useAnalyticsEventTracker('App');
+
   const pages = ["home", "about", "blog", "projects", "artwork", "onlyfans"]
   const [style, setStyle] = useState({animationClass: 'test'})
   const [state, setState] = useState(0)
@@ -33,6 +41,7 @@ function App() {
   }
 
   const selectState = () => {
+    gaEventTracker('select')
     setState(selector)
   }
 
