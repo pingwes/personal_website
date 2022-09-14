@@ -9,7 +9,6 @@ import Projects from './pages/projects'
 import Artwork from './pages/artwork'
 import ArrowPad from './components/arrowPad'
 import ReactGA from 'react-ga';
-import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 
 const TRACKING_ID = "UA-241109753-1"; // OUR_TRACKING_ID
 
@@ -20,8 +19,6 @@ function App() {
   useEffect(() => {
     ReactGA.initialize(TRACKING_ID);
   })
-
-  const gaEventTracker = useAnalyticsEventTracker('App');
 
   const pages = ["home", "about", "blog", "projects", "artwork", "onlyfans"]
   const [style, setStyle] = useState({animationClass: 'test'})
@@ -34,23 +31,18 @@ function App() {
   }
 
   const incrementSelector = (e) => {
-    gaEventTracker('down')
-
     if (selector < 5) setSelector(selector + 1);
     else
       setSelector(1)
   }
   
   const decrementSelector = () => {
-    gaEventTracker('up')
-
     if (selector > 1) setSelector(selector - 1);
     else
       setSelector(5)
   }
 
   const selectState = () => {
-    gaEventTracker('select')
     setState(selector)
   }
 
@@ -61,7 +53,10 @@ function App() {
   const renderPage = () => {
     switch(pages[state]){
       case "home":
-        gaEventTracker('home')
+        ReactGA.event({
+          category: 'Navigation',
+          action: 'Home'
+        });
 
         return (
           <Home
@@ -70,7 +65,10 @@ function App() {
           />
         )
       case "about":
-        gaEventTracker('about us')
+        ReactGA.event({
+          category: 'Navigation',
+          action: 'About'
+        });
 
         return (
           <About
@@ -78,7 +76,10 @@ function App() {
           />
         )
       case "blog": 
-        gaEventTracker('blog')
+        ReactGA.event({
+          category: 'Navigation',
+          action: 'Blog'
+        });
 
         openInNewTab('http://www.compunomicz.blogspot.com')
         setState(0)
@@ -89,7 +90,10 @@ function App() {
           />
         )
       case "projects":
-        gaEventTracker('projects')
+        ReactGA.event({
+          category: 'Navigation',
+          action: 'Projects'
+        });
 
         return (
           <Projects
@@ -97,7 +101,10 @@ function App() {
           />
         )
       case "artwork":
-        gaEventTracker('artwork')
+        ReactGA.event({
+          category: 'Navigation',
+          action: 'Artwork'
+        });
 
         openInNewTab('https://vsco.co/berrywes/gallery')
         setState(0)
@@ -108,7 +115,10 @@ function App() {
           />
         )
       case "onlyfans":
-        gaEventTracker('onlyfans')
+        ReactGA.event({
+          category: 'Navigation',
+          action: 'OnlyFans'
+        });
 
         openInNewTab('https://www.wikihow.com/Find-God')
         setState(0)
