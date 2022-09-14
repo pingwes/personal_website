@@ -29,12 +29,16 @@ function App() {
   }
 
   const incrementSelector = (e) => {
+    gaEventTracker('down')
+
     if (selector < 5) setSelector(selector + 1);
     else
       setSelector(1)
   }
   
   const decrementSelector = () => {
+    gaEventTracker('up')
+
     if (selector > 1) setSelector(selector - 1);
     else
       setSelector(5)
@@ -52,6 +56,8 @@ function App() {
   const renderPage = () => {
     switch(pages[state]){
       case "home":
+        gaEventTracker('home')
+
         return (
           <Home
             handleChange={handleChange}
@@ -59,12 +65,16 @@ function App() {
           />
         )
       case "about":
+        gaEventTracker('about us')
+
         return (
           <About
             handleChange={handleChange}
           />
         )
       case "blog": 
+        gaEventTracker('blog')
+
         openInNewTab('http://www.compunomicz.blogspot.com')
         setState(0)
         return (
@@ -74,12 +84,16 @@ function App() {
           />
         )
       case "projects":
+        gaEventTracker('projects')
+
         return (
           <Projects
             handleChange={handleChange}
           />
         )
       case "artwork":
+        gaEventTracker('artwork')
+
         openInNewTab('https://vsco.co/berrywes/gallery')
         setState(0)
         return (
@@ -89,6 +103,8 @@ function App() {
           />
         )
       case "onlyfans":
+        gaEventTracker('onlyfans')
+
         openInNewTab('https://www.wikihow.com/Find-God')
         setState(0)
         return (
