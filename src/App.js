@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Home from './pages/home'
@@ -11,11 +11,16 @@ import ArrowPad from './components/arrowPad'
 import ReactGA from 'react-ga';
 import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 
-const MEASUREMENT_ID = "G-2HQHR1VQEL"; // OUR_TRACKING_ID
+const TRACKING_ID = "UA-241109753-1"; // OUR_TRACKING_ID
 
-ReactGA.initialize(MEASUREMENT_ID);
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
+  
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID);
+  })
+
   const gaEventTracker = useAnalyticsEventTracker('App');
 
   const pages = ["home", "about", "blog", "projects", "artwork", "onlyfans"]
