@@ -164,7 +164,7 @@ function App() {
           </div>
         </div>
         <div className="grid grid-cols-8 gap-2 mx-5 mt-16 ml-8">
-          <div className="col-span-4">
+          <div className="col-span-4 pl-5">
             <ArrowPad 
               down={incrementSelector}
               up={decrementSelector}
