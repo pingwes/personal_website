@@ -39,7 +39,7 @@ const Home = ({handleChange, current}) => {
           <button 
             className="terminal text-2xl"
             value={5}  
-            onClick={e => handleChange(e) } >OnlyFans</button>  
+            onClick={e => handleChange(e) } >YouTube</button>  
         </p>
       </div>
     </>

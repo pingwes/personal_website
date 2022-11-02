@@ -25,7 +25,7 @@ function App() {
     });
   })
 
-  const pages = ["home", "about", "blog", "projects", "artwork", "onlyfans"]
+  const pages = ["home", "about", "blog", "projects", "artwork", "YouTube"]
   const [style, setStyle] = useState({animationClass: 'test'})
   const [state, setState] = useState(0)
   const [selector, setSelector] = useState(1)
