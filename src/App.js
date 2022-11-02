@@ -12,12 +12,17 @@ import ReactGA from 'react-ga';
 
 const TRACKING_ID = "UA-241109753-1"; // OUR_TRACKING_ID
 
-ReactGA.initialize(TRACKING_ID);
 
 function App() {
   
   useEffect(() => {
-    ReactGA.initialize(TRACKING_ID);
+    ReactGA.initialize(TRACKING_ID, {
+      debug: true,
+      titleCase: false,
+      gaOptions: {
+        userId: 123
+      }
+    });
   })
 
   const pages = ["home", "about", "blog", "projects", "artwork", "onlyfans"]
@@ -53,6 +58,7 @@ function App() {
   const renderPage = () => {
     switch(pages[state]){
       case "home":
+        
         ReactGA.event({
           category: 'Navigation',
           action: 'Home'
@@ -114,13 +120,13 @@ function App() {
             current={selector}
           />
         )
-      case "onlyfans":
+      case "YouTube":
         ReactGA.event({
           category: 'Navigation',
-          action: 'OnlyFans'
+          action: 'YouTube'
         });
 
-        openInNewTab('https://www.wikihow.com/Find-God')
+        openInNewTab('https://www.youtube.com/watch?v=Tit0cglCkso')
         setState(0)
         return (
           <Home
@@ -128,6 +134,20 @@ function App() {
             current={selector}
           />
         )
+      // case "onlyfans":
+      //   ReactGA.event({
+      //     category: 'Navigation',
+      //     action: 'OnlyFans'
+      //   });
+
+      //   openInNewTab('https://www.wikihow.com/Find-God')
+      //   setState(0)
+      //   return (
+      //     <Home
+      //       handleChange={handleChange}
+      //       current={selector}
+      //     />
+      //   )
     }
   }
 
