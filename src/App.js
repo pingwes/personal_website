@@ -164,14 +164,14 @@ function App() {
           </div>
         </div>
         <div className="grid grid-cols-8 gap-2 mx-5 mt-16 ml-8">
-          <div className="col-span-4 pl-5">
+          <div className="col-span-4 pl-4">
             <ArrowPad 
               down={incrementSelector}
               up={decrementSelector}
               left={handleChange}
               right={selectState} />
           </div>
-          <div className="col-span-4 grid grid-cols-2">
+          <div className="col-span-4 grid grid-cols-2 pr-8">
             <button className="rounded-3xl w-12 h-12 bg-red-500 text-red-600 text-3xl ml-5 mt-8 text-center border border-grey-500"
               value={0}  
               onClick={e => handleChange(e) } >B</button>
