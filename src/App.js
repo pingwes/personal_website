@@ -172,10 +172,10 @@ function App() {
               right={selectState} />
           </div>
           <div className="col-span-4 grid grid-cols-2 pr-6">
-            <button className="rounded-3xl w-12 h-12 bg-red-500 text-red-600 text-3xl ml-5 mt-8 text-center border border-grey-500"
+            <button className="rounded-3xl w-12 h-12 bg-red-500 text-red-600 text-3xl ml-3 mt-8 text-center border border-grey-500"
               value={0}  
               onClick={e => handleChange(e) } >B</button>
-            <button className="rounded-3xl w-12 h-12 bg-green-500 text-green-600 text-3xl ml-5 text-center border border-grey-500"
+            <button className="rounded-3xl w-12 h-12 bg-green-500 text-green-600 text-3xl ml-4 text-center border border-grey-500"
               onClick={selectState}>A</button>
           </div>
         </div>
