@@ -181,8 +181,8 @@ function App() {
         </div>
 
         <div className="absolute bottom-4 inset-x-0 text-center text-xl">
-          <div className='jost text-sm'>weslouis.eth</div>
-          <div className='hallelujah '>Wesley Louis Berry III </div>
+          <div className='jost text-md'>weslouis.eth</div>
+          {/* <div className='hallelujah '>Wesley Louis Berry III </div> */}
           
         </div>
         
