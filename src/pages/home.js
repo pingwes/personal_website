@@ -40,6 +40,12 @@ const Home = ({handleChange, current}) => {
             className="terminal text-2xl"
             value={5}  
             onClick={e => handleChange(e) } >YouTube</button>  
+          <br/>
+          {current == 6 && <ArrowSelect/>}
+          <button 
+            className="terminal text-2xl"
+            value={6}  
+            onClick={e => handleChange(e) } >LinkedIn</button>  
         </p>
       </div>
     </>

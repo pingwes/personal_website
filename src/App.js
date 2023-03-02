@@ -25,7 +25,7 @@ function App() {
     });
   })
 
-  const pages = ["home", "about", "blog", "projects", "artwork", "YouTube"]
+  const pages = ["home", "about", "blog", "projects", "artwork", "YouTube", "LinkedIn"]
   const [style, setStyle] = useState({animationClass: 'test'})
   const [state, setState] = useState(0)
   const [selector, setSelector] = useState(1)
@@ -127,6 +127,20 @@ function App() {
         });
 
         openInNewTab('https://www.youtube.com/watch?v=Tit0cglCkso')
+        setState(0)
+        return (
+          <Home
+            handleChange={handleChange}
+            current={selector}
+          />
+        )
+      case "LinkedIn":
+        ReactGA.event({
+          category: 'Navigation',
+          action: 'LinkedIn'
+        });
+
+        openInNewTab('https://www.linkedin.com/in/wes-berry-80b98b15b/')
         setState(0)
         return (
           <Home
