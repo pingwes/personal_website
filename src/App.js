@@ -167,7 +167,7 @@ function App() {
 
   return (
     <div className="bg-neutral-700 h-screen flex justify-center items-center px-5 ">
-      <div className="relative bg-zinc-600 h-[40rem] w-[25rem] mx-auto pt-2 rounded-3xl shadow-2xl ">
+      <div className="relative bg-orange-400 h-[40rem] w-[25rem] mx-auto pt-2 rounded-3xl shadow-2xl ">
         <div className="bg-black h-1/2 mx-5 mt-5 py-5 pb-10 rounded-xl">
           <div className="bg-slate-800 text-white h-full mx-5 py-5">
             {renderPage()}
