@@ -36,7 +36,7 @@ function App() {
   }
 
   const incrementSelector = (e) => {
-    if (selector < 5) setSelector(selector + 1);
+    if (selector < 6) setSelector(selector + 1);
     else
       setSelector(1)
   }
@@ -178,7 +178,7 @@ function App() {
           </div>
         </div>
         <div className="grid grid-cols-8 gap-2 mx-5 mt-16 ml-5">
-          <div className="col-span-4 pl-10">
+          <div className="col-span-4 pl-4 ">
             <ArrowPad 
               down={incrementSelector}
               up={decrementSelector}
