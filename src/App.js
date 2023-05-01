@@ -25,7 +25,7 @@ function App() {
     });
   })
 
-  const pages = ["home", "about", "blog", "projects", "artwork", "YouTube", "LinkedIn"]
+  const pages = ["home", "about", "blog", "projects", "artwork", "LinkedIn"]
   const [style, setStyle] = useState({animationClass: 'test'})
   const [state, setState] = useState(0)
   const [selector, setSelector] = useState(1)
@@ -36,7 +36,7 @@ function App() {
   }
 
   const incrementSelector = (e) => {
-    if (selector < 6) setSelector(selector + 1);
+    if (selector < 5) setSelector(selector + 1);
     else
       setSelector(1)
   }
@@ -120,27 +120,13 @@ function App() {
             current={selector}
           />
         )
-      case "YouTube":
-        ReactGA.event({
-          category: 'Navigation',
-          action: 'YouTube'
-        });
-
-        openInNewTab('https://www.youtube.com/watch?v=Tit0cglCkso')
-        setState(0)
-        return (
-          <Home
-            handleChange={handleChange}
-            current={selector}
-          />
-        )
       case "LinkedIn":
         ReactGA.event({
           category: 'Navigation',
           action: 'LinkedIn'
         });
 
-        openInNewTab('https://www.linkedin.com/in/wes-berry-80b98b15b/')
+        openInNewTab('https://www.linkedin.com/in/wesley-louis-berry-80b98b15b/')
         setState(0)
         return (
           <Home
