@@ -88,7 +88,7 @@ function App() {
         });
         return (    
           <iframe
-            src={"https://www.compunomicz.blogspot.com"}
+            src={"https://compunomicz.blogspot.com/"}
             frameBorder="0"
             width="300"
             style={{width: '100%', height: '100%' }}
