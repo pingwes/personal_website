@@ -9,6 +9,7 @@ import Projects from './pages/projects'
 import Artwork from './pages/artwork'
 import ArrowPad from './components/arrowPad'
 import ReactGA from 'react-ga';
+import OpenNewTabIcon from './components/OpenNewTabIcon';
 
 const TRACKING_ID = "UA-241109753-1"; // OUR_TRACKING_ID
 
@@ -25,7 +26,7 @@ function App() {
     });
   })
 
-  const pages = ["home", "about", "blog", "projects", "artwork", "LinkedIn"]
+  const pages = ["home", "about", "blog", "projects", "artwork", "YouTube", "LinkedIn"]
   const [style, setStyle] = useState({animationClass: 'test'})
   const [state, setState] = useState(0)
   const [selector, setSelector] = useState(1)
@@ -36,7 +37,7 @@ function App() {
   }
 
   const incrementSelector = (e) => {
-    if (selector < 5) setSelector(selector + 1);
+    if (selector < 6) setSelector(selector + 1);
     else
       setSelector(1)
   }
@@ -58,7 +59,6 @@ function App() {
   const renderPage = () => {
     switch(pages[state]){
       case "home":
-        
         ReactGA.event({
           category: 'Navigation',
           action: 'Home'
@@ -86,14 +86,13 @@ function App() {
           category: 'Navigation',
           action: 'Blog'
         });
-
-        openInNewTab('http://www.compunomicz.blogspot.com')
-        setState(0)
-        return (
-          <Home
-            handleChange={handleChange}
-            current={selector}
-          />
+        return (    
+          <iframe
+            src={"http://www.compunomicz.blogspot.com"}
+            frameBorder="0"
+            width="300"
+            style={{width: '100%', height: '100%' }}
+          />      
         )
       case "projects":
         ReactGA.event({
@@ -111,8 +110,20 @@ function App() {
           category: 'Navigation',
           action: 'Artwork'
         });
-
         openInNewTab('https://vsco.co/berrywes/gallery')
+        setState(0)
+        return (
+          <Home
+            handleChange={handleChange}
+            current={selector}
+          />
+        )
+      case "YouTube":
+        ReactGA.event({
+          category: 'Navigation',
+          action: 'YouTube'
+        });
+        openInNewTab('https://www.youtube.com/watch?v=Tit0cglCkso')
         setState(0)
         return (
           <Home
@@ -125,14 +136,10 @@ function App() {
           category: 'Navigation',
           action: 'LinkedIn'
         });
-
-        openInNewTab('https://www.linkedin.com/in/wesley-louis-berry-80b98b15b/')
-        setState(0)
         return (
-          <Home
-            handleChange={handleChange}
-            current={selector}
-          />
+          <>
+            
+          </>
         )
       // case "onlyfans":
       //   ReactGA.event({
@@ -155,12 +162,19 @@ function App() {
     <div className="bg-neutral-700 h-screen flex justify-center items-center px-5 ">
       <div className="relative bg-orange-400 h-[40rem] w-[25rem] mx-auto pt-2 rounded-3xl shadow-2xl ">
         <div className="bg-black h-1/2 mx-5 mt-5 py-5 pb-10 rounded-xl">
-          <div className="bg-slate-800 text-white h-full mx-5 py-5">
+          <div className="bg-slate-800 text-white h-full mx-5 py-0">
             {renderPage()}
           </div>
-          <div className="text-center mt-1">
-            <div className="text-blue-400 text-xl inline">無限</div>
-            <div className="text-purple-400 text-xl inline">の魂</div>
+          <div className="text-center mt-1 ">
+            <div className="text-blue-400 text-2xl inline">無限</div>
+            <div className="text-purple-400 text-2xl inline">の魂 </div>
+            <div className='flex justify-end -mt-7 mr-6 '
+              onClick={()=>{
+                if(selector == 2)
+                  openInNewTab('http://www.compunomicz.blogspot.com')
+              }}>            
+              <OpenNewTabIcon fill={selector == 2 ? "white" : "gray"} />
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-8 gap-2 mx-5 mt-16 ml-5">

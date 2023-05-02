@@ -13,7 +13,7 @@ const Home = ({handleChange, current}) => {
         <p>
           {current == 1 && <ArrowSelect/>}
           <button 
-            className="terminal text-2xl"
+            className="terminal text-2xl mt-5"
             value={1}  
             onClick={e => handleChange(e) } >About me</button>
           <br/>
