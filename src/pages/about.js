@@ -4,7 +4,7 @@ import React from "react";
 const About = (handleChange) => {
   
   return (
-    <div className="mx-5 mt-5 ">
+    <div className="mx-5 pt-5 ">
       {/* <div className="text-xl ">
       About me
       </div> */}
