@@ -3,7 +3,7 @@ import React from "react";
   
 const Projects = (handleChange) => {
   return (
-    <div className=" px-4">
+    <div className=" px-4 mt-5">
       <div className=" text-2xl ">
       Projects
       </div>
