@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Home from './pages/home'
@@ -37,15 +37,26 @@ function App() {
   }
 
   const incrementSelector = (e) => {
-    if (selector < 6) setSelector(selector + 1);
-    else
-      setSelector(1)
+    console.log("state: " + state)
+    if (state !=  2 && state != 4){
+      if (selector < 5) setSelector(selector + 1);
+      else
+        setSelector(1)
+    }
+    if (state == 4) {
+      handleScrollDown()
+    }
   }
   
   const decrementSelector = () => {
-    if (selector > 1) setSelector(selector - 1);
-    else
-      setSelector(5)
+    if (state != 2 && state != 4){
+      if (selector > 1) setSelector(selector - 1);
+      else
+        setSelector(5)
+    }
+    if (state == 4) {
+      handleScrollUp()
+    }
   }
 
   const selectState = () => {
@@ -54,6 +65,29 @@ function App() {
 
   const openInNewTab = (url) => {
     window.open(url);
+  };
+  
+
+  const childRef = useRef(null);
+
+  const handleScroll = (scrollAmount) => {
+    const element = childRef.current;
+    const currentScrollPosition = element.scrollTop;
+    const targetScrollPosition = currentScrollPosition + scrollAmount;
+    element.scroll({
+      top: targetScrollPosition,
+      behavior: 'smooth',
+    });
+  };
+
+  const handleScrollDown = () => {
+    const scrollAmount = 100;
+    handleScroll(scrollAmount);
+  };
+
+  const handleScrollUp = () => {
+    const scrollAmount = -100;
+    handleScroll(scrollAmount);
   };
 
   const renderPage = () => {
@@ -114,6 +148,7 @@ function App() {
         // setState(0)
         return (
           <Artwork 
+            childRef={childRef}
 
           />
         )

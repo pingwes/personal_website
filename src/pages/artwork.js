@@ -1,8 +1,11 @@
 import React from "react";
   
-const Artwork = (handleChange) => {
+const Artwork = (props) => {
+
   return (
-    <div className="px-4 pt-4 mb-2 h-64 overflow-y-auto">
+    <div className="px-4 pt-4 mb-2 h-64 overflow-y-auto"
+      ref={props.childRef}>
+      
       <div className=" text-2xl ">
       Artwork
       </div>
