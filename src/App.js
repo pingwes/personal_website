@@ -110,12 +110,11 @@ function App() {
           category: 'Navigation',
           action: 'Artwork'
         });
-        openInNewTab('https://vsco.co/berrywes/gallery')
-        setState(0)
+        // openInNewTab('https://vsco.co/berrywes/gallery')
+        // setState(0)
         return (
-          <Home
-            handleChange={handleChange}
-            current={selector}
+          <Artwork 
+
           />
         )
       case "YouTube":
