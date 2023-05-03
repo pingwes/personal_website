@@ -26,7 +26,7 @@ function App() {
     });
   })
 
-  const pages = ["home", "about", "blog", "projects", "artwork", "YouTube", "LinkedIn"]
+  const pages = ["home", "about", "blog", "projects", "artwork", "LinkedIn"]
   const [style, setStyle] = useState({animationClass: 'test'})
   const [state, setState] = useState(0)
   const [selector, setSelector] = useState(1)
@@ -152,12 +152,13 @@ function App() {
 
           />
         )
-      case "YouTube":
+      
+      case "LinkedIn":
         ReactGA.event({
           category: 'Navigation',
-          action: 'YouTube'
+          action: 'LinkedIn'
         });
-        openInNewTab('https://www.youtube.com/watch?v=Tit0cglCkso')
+        openInNewTab('https://www.linkedin.com/in/wesley-louis-berry-80b98b15b/')
         setState(0)
         return (
           <Home
@@ -165,16 +166,7 @@ function App() {
             current={selector}
           />
         )
-      case "LinkedIn":
-        ReactGA.event({
-          category: 'Navigation',
-          action: 'LinkedIn'
-        });
-        return (
-          <>
-            
-          </>
-        )
+        
       // case "onlyfans":
       //   ReactGA.event({
       //     category: 'Navigation',
